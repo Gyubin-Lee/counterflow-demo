@@ -46,18 +46,18 @@
     },
     {
       "section": "Music",
-      "video_stem": "piano_1",
-      "source_prompt": "piano playing",
-      "target_prompt": "violin playing",
-      "target_slug": "violin_playing",
+      "video_stem": "acoustic_guitar_4",
+      "source_prompt": "acoustic guitar playing",
+      "target_prompt": "drum beating",
+      "target_slug": "drum_beating",
       "results_version": "local7_v3"
     },
     {
       "section": "Music",
-      "video_stem": "drum_1",
-      "source_prompt": "drum beating",
-      "target_prompt": "piano playing",
-      "target_slug": "piano_playing",
+      "video_stem": "piano_1",
+      "source_prompt": "piano playing",
+      "target_prompt": "flute playing",
+      "target_slug": "flute_playing",
       "results_version": "local7_v3"
     }
   ]
