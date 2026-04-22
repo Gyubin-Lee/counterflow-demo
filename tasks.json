@@ -22,26 +22,26 @@
   "tasks": [
     {
       "section": "Foley",
-      "video_stem": "cat_1",
+      "video_stem": "cat_2",
       "source_prompt": "cat meowing",
-      "target_prompt": "lion roaring",
-      "target_slug": "lion_roaring",
+      "target_prompt": "horse neighing",
+      "target_slug": "horse_neighing",
       "results_version": "local7_v2"
     },
     {
       "section": "Foley",
-      "video_stem": "dog_1",
+      "video_stem": "dog_3",
       "source_prompt": "dog barking",
-      "target_prompt": "lion roaring",
-      "target_slug": "lion_roaring",
+      "target_prompt": "bear growling",
+      "target_slug": "bear_growling",
       "results_version": "local7_v2"
     },
     {
       "section": "Foley",
       "video_stem": "gunshot_1",
       "source_prompt": "gunshot sound",
-      "target_prompt": "fireworks exploding",
-      "target_slug": "fireworks_exploding",
+      "target_prompt": "glass shattering",
+      "target_slug": "glass_shattering",
       "results_version": "local7_v2"
     },
     {
