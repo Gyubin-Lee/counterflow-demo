@@ -24,7 +24,7 @@ demo_page/
 Edit only `tasks.json`. Everything else is data-driven.
 
 - `site.main_figure` — path to the main figure (relative to `demo_page/`)
-- `site.title`, `site.authors`, `site.affiliations`, `site.abstract`, etc. — textual header
+- `site.title`, `site.authors`, `site.affiliations`, `site.abstract`, etc. — textual header. Authors and affiliations support paper-style superscript references.
 - `methods.ours` — highlighted column on the left
 - `methods.baselines` — three baseline columns on the right, in display order
 - `tasks[]` — each entry is one demo row:

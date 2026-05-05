@@ -64,20 +64,51 @@ function renderFigure(site) {
   }
 }
 
+function renderAuthors(authors) {
+  const root = el("div", { class: "authors" });
+  if (!Array.isArray(authors)) {
+    root.textContent = authors;
+    return root;
+  }
+
+  authors.forEach((author, index) => {
+    if (index > 0) root.appendChild(document.createTextNode(", "));
+    const item = el("span", { class: "author" });
+    item.appendChild(document.createTextNode(author.name));
+
+    const refs = Array.isArray(author.affiliations)
+      ? author.affiliations
+      : [author.affiliations].filter(Boolean);
+    if (refs.length) item.appendChild(el("sup", { text: refs.join(",") }));
+
+    root.appendChild(item);
+  });
+  return root;
+}
+
+function renderAffiliations(affiliations) {
+  const root = el("div", { class: "affiliations" });
+  const items = Array.isArray(affiliations) ? affiliations : [affiliations];
+
+  items.forEach((affiliation) => {
+    if (typeof affiliation === "string") {
+      root.appendChild(el("div", { class: "affiliation", text: affiliation }));
+      return;
+    }
+
+    const line = el("div", { class: "affiliation" });
+    if (affiliation.id) line.appendChild(el("sup", { text: affiliation.id }));
+    line.appendChild(document.createTextNode(affiliation.name));
+    root.appendChild(line);
+  });
+  return root;
+}
+
 function renderTitle(site) {
   const root = document.getElementById("title-section");
   root.appendChild(el("h1", { text: site.title }));
-  if (site.authors) root.appendChild(el("div", { class: "authors", text: site.authors }));
-  if (site.affiliations) {
-    const affiliations = Array.isArray(site.affiliations) ? site.affiliations : [site.affiliations];
-    root.appendChild(
-      el(
-        "div",
-        { class: "affiliations" },
-        affiliations.map((line) => el("div", { text: line }))
-      )
-    );
-  }
+  if (site.authors) root.appendChild(renderAuthors(site.authors));
+  if (site.affiliations) root.appendChild(renderAffiliations(site.affiliations));
   if (site.venue) root.appendChild(el("div", { class: "venue", text: site.venue }));
   document.title = site.short_title || site.title;
 }
