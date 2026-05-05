@@ -68,6 +68,16 @@ function renderTitle(site) {
   const root = document.getElementById("title-section");
   root.appendChild(el("h1", { text: site.title }));
   if (site.authors) root.appendChild(el("div", { class: "authors", text: site.authors }));
+  if (site.affiliations) {
+    const affiliations = Array.isArray(site.affiliations) ? site.affiliations : [site.affiliations];
+    root.appendChild(
+      el(
+        "div",
+        { class: "affiliations" },
+        affiliations.map((line) => el("div", { text: line }))
+      )
+    );
+  }
   if (site.venue) root.appendChild(el("div", { class: "venue", text: site.venue }));
   document.title = site.short_title || site.title;
 }

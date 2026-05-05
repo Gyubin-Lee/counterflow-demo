@@ -2,7 +2,11 @@
   "site": {
     "title": "CounterFlow: A Two-Phase Inference-Time Sampling for Counterfactual Video Foley Generation",
     "short_title": "CounterFlow",
-    "authors": "Anonymous Authors",
+    "authors": "Gyubin Lee (1), Junwon Lee (1), Juhan Nam (2)",
+    "affiliations": [
+      "(1) Graduate School of AI, KAIST",
+      "(2) Graduate School of Cultural Technology and Graduate School of AI, KAIST"
+    ],
     "venue": "CVPR 2026 Workshop Sight and Sound submission",
     "abstract": "We investigate counterfactual Video Foley generation, which requires generating audio temporally anchored to a silent video while adopting a sound source identity that contradicts the visual evidence. Existing Video&Text-to-Audio (VT2A) models struggle with this, often remaining anchored to the visually implied sound source when video and text contents disagree. We present CounterFlow, an inference-time two-phase sampling scheme for pretrained flow-matching VT2A models. Phase 1 builds a video-derived temporal structure while suppressing the visually implied source; Phase 2 drops video conditioning to focus entirely on shaping audio timbre toward the target prompt. CounterFlow substantially improves counterfactual Video Foley generation compared to naive negative prompting and state-of-the-art baselines. To evaluate replacement quality, we propose a metric leveraging a text-audio co-embedding space to measure both target-prompt evidence and residual visually implied source leakage.",
     "main_figure": "assets/figure/main_figure.png",

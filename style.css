@@ -71,6 +71,12 @@ h1, h2, h3 { line-height: 1.25; }
   font-weight: 500;
   margin: 4px 0;
 }
+.title-section .affiliations {
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.4;
+  margin: 4px 0 8px;
+}
 .title-section .venue {
   color: var(--muted);
   font-size: 0.95rem;
@@ -197,4 +203,3 @@ h1, h2, h3 { line-height: 1.25; }
   text-align: center;
   padding: 8px;
 }
-
