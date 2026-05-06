@@ -104,11 +104,47 @@ function renderAffiliations(affiliations) {
   return root;
 }
 
+function renderLinks(links) {
+  const root = el("div", { class: "project-links" });
+  const items = Array.isArray(links) ? links : [links];
+
+  items.forEach((link) => {
+    if (link.disabled) {
+      const wrap = el("span", { class: "link-wrap disabled" });
+      wrap.appendChild(
+        el("button", {
+          class: "project-button disabled",
+          text: link.label,
+          attrs: { type: "button", disabled: "" },
+        })
+      );
+      if (link.note) wrap.appendChild(el("span", { class: "link-note", text: link.note }));
+      root.appendChild(wrap);
+      return;
+    }
+
+    root.appendChild(
+      el("a", {
+        class: "project-button",
+        text: link.label,
+        attrs: {
+          href: link.href,
+          target: "_blank",
+          rel: "noopener noreferrer",
+        },
+      })
+    );
+  });
+
+  return root;
+}
+
 function renderTitle(site) {
   const root = document.getElementById("title-section");
   root.appendChild(el("h1", { text: site.title }));
   if (site.authors) root.appendChild(renderAuthors(site.authors));
   if (site.affiliations) root.appendChild(renderAffiliations(site.affiliations));
+  if (site.links) root.appendChild(renderLinks(site.links));
   if (site.venue) root.appendChild(el("div", { class: "venue", text: site.venue }));
   document.title = site.short_title || site.title;
 }

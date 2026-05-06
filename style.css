@@ -92,6 +92,50 @@ h1, h2, h3 { line-height: 1.25; }
   margin-right: 4px;
   vertical-align: super;
 }
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 14px 0 10px;
+}
+.link-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.project-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 36px;
+  padding: 0 14px;
+  border: 1px solid var(--fg);
+  border-radius: 6px;
+  background: var(--fg);
+  color: var(--bg);
+  font: inherit;
+  font-size: 0.94rem;
+  font-weight: 600;
+  line-height: 1;
+  text-decoration: none;
+  cursor: pointer;
+}
+.project-button:hover {
+  background: #343434;
+  border-color: #343434;
+}
+.project-button.disabled {
+  border-color: var(--border);
+  background: #eef0f3;
+  color: var(--muted);
+  cursor: not-allowed;
+}
+.link-note {
+  color: var(--muted);
+  font-size: 0.88rem;
+}
 .title-section .venue {
   color: var(--muted);
   font-size: 0.95rem;
