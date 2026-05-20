@@ -18,8 +18,7 @@
       },
       {
         "label": "Paper PDF",
-        "disabled": true,
-        "note": "PDF coming soon"
+        "href": "https://arxiv.org/abs/2605.18916"
       }
     ],
     "venue": "CVPR 2026 Workshop Sight and Sound submission",
